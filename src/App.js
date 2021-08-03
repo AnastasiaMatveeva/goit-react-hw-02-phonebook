@@ -25,7 +25,7 @@ class App extends Component {
     const { contacts } = this.state;
     const isContactExist = contacts.find(contact => contact.name === name);
     if (isContactExist) {
-      alert(`${name} is already axist in contacts`);
+      alert(`${name} is already exist in contacts`);
       return;
     }
     const id = uuidv4();
@@ -38,6 +38,7 @@ class App extends Component {
       contacts: [...prevState.contacts, newContact],
     }));
   };
+
   deleteContact = id => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),
